@@ -16,12 +16,14 @@ function startApp(parent){
     parent.appendChild(subElem);
 }
 
-document.getElementById('theme-button').addEventListener('click', function(e){
-    let theme = window.localStorage.getItem('theme');
-    console.log("debut : " + theme);
+document.getElementById('theme-button').addEventListener('click', getTheme);
 
+function getTheme() {
+    let theme = window.localStorage.getItem('theme');
     theme = (theme !== 'light') ? 'light' : 'dark';
     let style = document.querySelector('link');
     style.href = "./assets/css/" + theme + ".css";
     window.localStorage.setItem('theme', theme);
-})
+}
+
+getTheme();
