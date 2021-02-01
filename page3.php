@@ -7,7 +7,7 @@ include './_partials/menu.php';
 
     <!-- page content -->
     <main>
-
+        <div id="app-root"></div>
     </main>
 
 <?php
