@@ -20,10 +20,12 @@ document.getElementById('theme-button').addEventListener('click', getTheme);
 
 function getTheme() {
     let theme = window.localStorage.getItem('theme');
-    theme = (theme !== 'light') ? 'light' : 'dark';
+    theme = (theme !== 'dark') ? 'dark' : 'ligth';
     let style = document.querySelector('link');
     style.href = "./assets/css/" + theme + ".css";
     window.localStorage.setItem('theme', theme);
 }
-
+if(["dark", "light"].includes(window.localStorage.getItem('theme'))) {
+    getTheme(false);
+}
 getTheme();
